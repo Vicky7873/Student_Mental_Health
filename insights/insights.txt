@@ -1,0 +1,28 @@
+1. As per above we can say that the its a quite possible that most of the males are part of this survey
+2. Most of the audiances are from the PU university
+3. As per above we can say that the age group 20,21 and above 26 are more likely to have depression
+4. the most of students/ 70% of the students are not suffering from the depression
+5. the undergraduate students are more likely to suffer from depression
+6. the every professionsals are in the depression
+7. the womens are more depressed than the men bcoz os the counts of the gender
+8. he students hvae cgpa 1.5-2.0 are more stressed than the others
+9. the students those are take rest between 4-6 hrs have more chances to be suffered in depression
+10. the students are facing the campus_discrimination are more stressed
+11. the outliers are present in the cgpa or not consider as outliers
+12. the candidate have future_insecurity 5 then they have the high chances to be depression
+
+
+
+
+
+
+
+
+
+Index(['gender', 'age', 'university', 'degree_level', 'degree_major',
+       'academic_year', 'cgpa', 'residential_status', 'campus_discrimination',
+       'sports_engagement', 'average_sleep', 'study_satisfaction',
+       'academic_workload ', 'academic_pressure', 'financial_concerns',
+       'social_relationships', 'depression', 'anxiety', 'isolation',
+       'future_insecurity'],
+      dtype='object')
