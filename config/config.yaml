@@ -3,3 +3,11 @@ data_root: data
 data_ingestion:
   root_dir: data/data_ingestion
   data_path: data/MentalHealthSurvey.csv
+
+data_loading:
+  root_dir: data/data_loading
+  data_path: data/data_ingestion/MentalHealthSurvey.csv
+  X_train: data/data_loading/X_train.csv
+  X_test: data/data_loading/X_test.csv
+  y_train: data/data_loading/y_train.csv
+  y_test: data/data_loading/y_test.csv
