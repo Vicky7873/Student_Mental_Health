@@ -1,0 +1,5 @@
+data_root: data
+
+data_ingestion:
+  root_dir: data/data_ingestion
+  data_path: data/MentalHealthSurvey.csv
