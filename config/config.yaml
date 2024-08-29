@@ -22,3 +22,9 @@ data_preprocessing:
   X_test_processed: data/data_preprocessing/X_test_processed.csv
   y_train_processed: data/data_preprocessing/y_train_processed.csv
   y_test_processed: data/data_preprocessing/y_test_processed.csv 
+
+model_training:
+  root_dir: data/model_training
+  model_path: data/model_training/rfc.pkl
+  X_train_processed: data/data_preprocessing/X_train_processed.csv
+  y_train_processed: data/data_loading/y_train.csv

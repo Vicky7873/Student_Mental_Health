@@ -27,3 +27,12 @@ class DataTransformationConfig:
     X_test_processed: Path
     y_train_processed: Path
     y_test_processed: Path
+
+@dataclass(frozen=True)
+class ModelTrainingConfig:
+    root_dir :Path
+    model_path : Path
+    criterion: str
+    n_estimators: int
+    X_train_processed: Path
+    y_train_processed: Path
