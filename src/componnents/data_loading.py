@@ -20,6 +20,7 @@ class DataLoading:
     
     def split_data(self):
         df = self.get_data_loading()
+        df.drop(columns=['stress_relief_activities'],axis=1,inplace=True)
         X = df.drop('depression',axis=1)
         y = df['depression']
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=self.config.test_size, random_state=42)

@@ -15,3 +15,15 @@ class DataloadingConfig:
     y_train: Path
     y_test: Path
     test_size: float
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    X_train: Path
+    X_test: Path
+    y_train: Path
+    y_test: Path
+    X_train_processed: Path
+    X_test_processed: Path
+    y_train_processed: Path
+    y_test_processed: Path
