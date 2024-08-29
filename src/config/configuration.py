@@ -1,7 +1,7 @@
 # for configmanger
 from src.constants import *
 from src.utils.common import read_yaml, create_directories
-from src.entity import DataIngestionConfig, DataloadingConfig, DataTransformationConfig, ModelTrainingConfig
+from src.entity import DataIngestionConfig, DataloadingConfig, DataTransformationConfig, ModelTrainingConfig,ModelEvaluatioConfig
 
 
 
@@ -70,3 +70,16 @@ class ConfigurationManager:
             y_train_processed = config.y_train_processed
         )
         return model_training_config
+    
+
+    def get_model_evaluation_config(self) -> ModelEvaluatioConfig:
+        config = self.config.Model_evaluation
+        create_directories([config.root_dir])
+        model_evaluation_config = ModelEvaluatioConfig(
+            root_dir = config.root_dir,
+            model_path = config.model_path,
+            X_test_processed = config.X_test_processed,
+            y_test_processed = config.y_test_processed,
+            save_param = config.save_param
+        )
+        return model_evaluation_config

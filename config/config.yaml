@@ -28,3 +28,10 @@ model_training:
   model_path: data/model_training/rfc.pkl
   X_train_processed: data/data_preprocessing/X_train_processed.csv
   y_train_processed: data/data_loading/y_train.csv
+
+Model_evaluation:
+  root_dir: data/Model_evaluation
+  model_path: data/model_training/rfc.pkl
+  X_test_processed: data/data_preprocessing/X_test_processed.csv
+  y_test_processed: data/data_loading/y_test.csv
+  save_param: data/Model_evaluation/model_scores.txt
