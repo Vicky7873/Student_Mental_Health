@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Prediction Form</h2>
+    <form id="predictionForm" action="/predict" method="post">
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="18" max="30" value="20" required>
+        </div>
+
+        <div class="form-group">
+            <label for="university">University</label>
+            <select id="university" name="university" required>
+                <option value="">Select University</option>
+                <option value="PU">PU</option>
+                <option value="UET">UET</option>
+                <option value="FAST">FAST</option>
+                <option value="COMSATS">COMSATS</option>
+                <option value="NUST">NUST</option>
+                <option value="VU">VU</option>
+                <option value="UMT">UMT</option>
+                <option value="UOL">UOL</option>
+                <option value="KUST">KUST</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree_level">Degree Level</label>
+            <select id="degree_level" name="degree_level" required>
+                <option value="">Select Degree Level</option>
+                <option value="Undergraduate">Undergraduate</option>
+                <option value="Postgraduate">Postgraduate</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree_major">Degree Major</label>
+            <select id="degree_major" name="degree_major" required>
+                <option value="">Select Degree Major</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Information Technology">Information Technology</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="academic_year">Academic Year</label>
+            <select id="academic_year" name="academic_year" required>
+                <option value="">Select Academic Year</option>
+                <option value="2nd year">1st year</option>
+                <option value="2nd year">2nd year</option>
+                <option value="3rd year">3rd year</option>
+                <option value="2nd year">4th year</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cgpa">CGPA</label>
+            <select id="cgpa" name="cgpa" required>
+                <option value="">Select CGPA</option>
+                <option value="0.0-0.0">0.0-0.0</option>
+                <option value="0.5-1.0">0.5-1.0</option>
+                <option value="1.0-1.5">1.0-1.5</option>
+                <option value="1.5-2.0">1.5-2.0</option>
+                <option value="2.0-2.5">2.0-2.5</option>
+                <option value="2.5-3.0">2.5-3.0</option>
+                <option value="3.0-3.5">3.0-3.5</option>
+                <option value="3.5-4.0">3.5-4.0</option>
+                <option value="4.0-4.5">4.0-4.5</option>
+                <option value="4.5-5.0">4.5-5.0</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="residential_status">Residential Status</label>
+            <select id="residential_status" name="residential_status" required>
+                <option value="">Select Residential Status</option>
+                <option value="Off-Campus">Off-Campus</option>
+                <option value="On-Campus">On-Campus</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="campus_discrimination">Campus Discrimination</label>
+            <select id="campus_discrimination" name="campus_discrimination" required>
+                <option value="">Select Discrimination Status</option>
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="sports_engagement">Sports Engagement</label>
+            <select id="sports_engagement" name="sports_engagement" required>
+                <option value="">Select Sports Engagement</option>
+                <option value="No Sports">No Sports</option>
+                <option value="1-3 times">1-3 times</option>
+                <option value="7+ times">7+ times</option>
+                <option value="4-6 times">4-6 times</option>
+            </select>
+        </div>
+
+        <!-- Additional fields -->
+
+        <div class="form-group">
+            <label for="average_sleep"> average_sleep</label>
+            <input type="number" id="average_sleep" name="average_sleep" min="1" max="5" value="5" required>
+        </div>
+
+        <div class="form-group">
+            <label for="study_satisfaction">Study Satisfaction</label>
+            <input type="number" id="study_satisfaction" name="study_satisfaction" min="1" max="5" value="5" required>
+        </div>
+
+        <div class="form-group">
+            <label for="academic_workload">Academic Workload</label>
+            <input type="number" id="academic_workload" name="academic_workload" min="2" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="academic_pressure">Academic Pressure</label>
+            <input type="number" id="academic_pressure" name="academic_pressure" min="1" max="5" value="5" required>
+        </div>
+
+        <div class="form-group">
+            <label for="financial_concerns">Financial Concerns</label>
+            <input type="number" id="financial_concerns" name="financial_concerns" min="1" max="5" value="4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="social_relationships">Social Relationships</label>
+            <input type="number" id="social_relationships" name="social_relationships" min="1" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="anxiety">anxiety</label>
+            <input type="number" id="anxiety" name="anxiety" min="1" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="isolation">isolation</label>
+            <input type="number" id="isolation" name="isolation" min="1" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="future_insecurity">future_insecurity</label>
+            <input type="number" id="future_insecurity" name="future_insecurity" min="1" max="5" value="3" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Predict</button>
+        </div>
+    </form>
+</div>
+
+ <!-- Prediction Result Display -->
+ {% if prediction %}
+ <div class="prediction-result">
+     <strong>Prediction:</strong> {{ prediction }}
+ </div>
+ {% endif %}
+</div>
+
+<script>
+    document.getElementById('predictionForm').addEventListener('submit', function (event) {
+        const age = document.getElementById('age').value;
+
+        // Check for age limits
+        if (age < 18 || age > 30) {
+            alert('Age must be between 18 and 30.');
+            event.preventDefault(); // Prevent the form from being submitted
+            return;
+        }
+
+        // Check for missing required fields
+        const requiredFields = document.querySelectorAll('#predictionForm [required]');
+        let allFieldsFilled = true;
+
+        requiredFields.forEach(field => {
+            if (!field.value) {
+                alert(`Please fill in the ${field.previousElementSibling.innerText}.`);
+                field.focus();
+                allFieldsFilled = false;
+                event.preventDefault(); // Prevent the form from being submitted
+                return false; // Break loop if field is empty
+            }
+        });
+
+        if (!allFieldsFilled) {
+            return;
+        }
+    });
+</script>
+
+</body>
+</html>

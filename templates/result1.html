@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f8ff;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+            overflow: hidden;
+        }
+        .result-container {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            animation: fadeIn 1s ease-out;
+        }
+        .result-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+            animation: bounce 1s ease infinite alternate;
+        }
+        .result-message {
+            font-size: 22px;
+            margin-top: 10px;
+            padding: 20px;
+            border-left: 8px solid #007bff;
+            border-radius: 5px;
+            display: inline-block;
+            background-color: #e7f5ff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.2s ease-out;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            animation: fadeIn 1.5s ease-out;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+    <h2>Prediction Result</h2>
+    <!-- Dynamic content based on prediction -->
+    <div class="result-message">
+        {% if prediction == 'You are healthy' %}
+            <div class="result-icon">😊</div>
+            <strong>Prediction:</strong> You are healthy! Keep up the good work.
+        {% elif prediction == 'Please take care of your health and contact to your Doctor if required' %}
+            <div class="result-icon">⚠️</div>
+            <strong>Prediction:</strong> Please take care of your health. Consider consulting a doctor if needed.
+        {% elif prediction == 'Sorry! Please contact to your Doctor' %}
+            <div class="result-icon">🚨</div>
+            <strong>Prediction:</strong> It is important to contact a healthcare provider for help.
+        {% else %}
+            <div class="result-icon">🤔</div>
+            <strong>Prediction:</strong> {{ prediction }}
+        {% endif %}
+    </div>
+    <a href="/" class="btn">Go Back to Form</a>
+</div>
+
+</body>
+</html>

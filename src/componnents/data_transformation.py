@@ -25,6 +25,10 @@ class DataTransformation:
             if X_test[col].dtype == 'object':
                 X_test[col] = le.fit_transform(X_test[col])
 
+        X_train.columns = X_train.columns.str.rstrip()
+        # this code to remove white spaces at the end of the columns
+        X_test.columns = X_test.columns.str.rstrip()
+
         X_train_encoded = X_train
         X_test_encoded = X_test
         print(X_train_encoded.head(2))
