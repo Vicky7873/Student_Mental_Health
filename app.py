@@ -6,7 +6,7 @@ import pickle
 
 
 app = Flask(__name__, template_folder='templates')
-model = pickle.load(open('/Users/bhikipallai/Desktop/Projects/Student_Mental_Health/Student_Mental_Health/data/model_training/rfc.pkl',"rb"))
+model = pickle.load(open('data/model_training/rfc.pkl',"rb"))
 
 @app.route('/')
 def index():
